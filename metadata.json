@@ -1,0 +1,8 @@
+{
+  "name": "Remix Anna Mergeryan - Portfolio",
+  "description": "A premium, futuristic minimalist portfolio for Product Designer Anna Mergeryan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

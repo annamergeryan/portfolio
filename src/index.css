@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cinzel:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #3b82f6; /* Blue */
+  --color-secondary: #8b5cf6; /* Violet */
+  --color-background-light: #f5f5f7;
+  --color-background-dark: #050505;
+  --color-text-light: #050505;
+  --color-text-dark: #f5f5f7;
+}
+
+@utility text-stroke-1 {
+  -webkit-text-stroke: 1px rgba(255,255,255,0.4);
+}
+@utility text-stroke-transparent {
+  color: transparent;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  /* Hide standard cursor for our custom cursor, but keep it on mobile where custom cursor won't show */
+  @media (pointer: fine) {
+    cursor: none;
+  }
+}
+
+@media (pointer: fine) {
+  a, button, input, textarea, select {
+    cursor: none;
+  }
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

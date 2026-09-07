@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /messages/{messageId} {
+      // Anyone can submit a contact message if valid data is provided
+      allow create: if request.resource.data.name is string 
+                    && request.resource.data.email is string
+                    && request.resource.data.message is string
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.email.size() > 0
+                    && request.resource.data.message.size() > 0;
+      // Messages are private and cannot be read publicly or modified/deleted
+      allow read, update, delete: if false;
+    }
+  }
+}
